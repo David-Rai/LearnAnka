@@ -1,16 +1,24 @@
-# React + Vite
+# LearnAnka
+- App for learning learning nepali numbers from 1-100.
+> was procastination to build this and i am also cooked by nepali numbers.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Teach stack
+- Vite + Reactjs
+- Tailwindcss,Lucide-React
+- Hardcoded Dataset
+- React Router
+- Local storage to store the state of user
+- SpeechSynthesis for pronunciation 
 
-Currently, two official plugins are available:
+# Features
+- 1-100 nepali numbers with (roman writing)
+- Voice pronunciation(tbh 6/10)
+- Explore to see specific number
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# Design
+<img src="./design/d1.png'>
 
-## React Compiler
+[More Designs](./design)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+Give it a star if you liked it 😂.
