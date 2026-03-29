@@ -1,99 +1,93 @@
-import React, { useState, useEffect } from "react";
-import numberLists from "./constant/numbers";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import React, { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight, Hash } from 'lucide-react';
+import numberLists from './constant/numbers';
 
 const App = () => {
-  const [index, setIndex] = useState(() => {
-    const saved = localStorage.getItem("current-number-index");
-    return saved ? JSON.parse(saved) : 0;
+  // Initialize state from localStorage or default to 0
+  const [currentIndex, setCurrentIndex] = useState(() => {
+    const saved = localStorage.getItem('nepaliNumberIndex');
+    return saved !== null ? parseInt(saved, 10) : 0;
   });
 
-  const updateIndex = (newIndex) => {
-    setIndex(newIndex);
-    localStorage.setItem("current-number-index", JSON.stringify(newIndex));
-  };
+  // Persist state whenever currentIndex changes
+  useEffect(() => {
+    localStorage.setItem('nepaliNumberIndex', currentIndex);
+  }, [currentIndex]);
+
+  const currentData = numberLists[currentIndex];
 
   const handleNext = () => {
-    if (index < numberLists.length - 1) {
-      updateIndex(index + 1);
+    if (currentIndex < numberLists.length - 1) {
+      setCurrentIndex((prev) => prev + 1);
     }
   };
 
   const handlePrev = () => {
-    if (index > 0) {
-      updateIndex(index - 1);
+    if (currentIndex > 0) {
+      setCurrentIndex((prev) => prev - 1);
     }
   };
 
-  // keyboard support
-  useEffect(() => {
-    const handleKey = (e) => {
-      if (e.key === "ArrowRight") handleNext();
-      if (e.key === "ArrowLeft") handlePrev();
-    };
-
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, [index]);
-
-  const current = numberLists[index];
-
   return (
-    <main className="min-h-screen bg-white flex items-center justify-center px-4">
-      
-      <div className="w-full max-w-lg flex flex-col items-center text-center space-y-8">
+    <main className="min-h-screen bg-white flex flex-col items-center justify-center p-6 text-slate-800">
+      <div className="max-w-md w-full border-2 border-red-100 rounded-3xl p-8 shadow-sm">
         
-        {/* Card */}
-        <div className="w-full bg-white border border-red-100 rounded-3xl shadow-lg p-8 sm:p-10">
-          
-          {/* Nepali Number */}
-          <h1 className="text-7xl sm:text-8xl font-bold text-red-500 leading-none">
-            {current.nepali}
-          </h1>
-
-          {/* Word */}
-          <p className="mt-6 text-2xl sm:text-3xl font-medium text-gray-800">
-            {current.word}
-          </p>
-
-          {/* Roman */}
-          <p className="mt-2 text-lg text-gray-500">
-            {current.roman}
-          </p>
-
-          {/* English number */}
-          <p className="mt-3 text-sm text-gray-400">
-            ({current.num})
-          </p>
+        {/* Header / Progress */}
+        <div className="flex justify-between items-center mb-12">
+          <div className="flex items-center gap-2 text-red-600">
+            <Hash size={20} />
+            <span className="font-bold">Number {currentData.num}</span>
+          </div>
+          <span className="text-xs font-medium text-red-400 uppercase tracking-widest">
+            {currentIndex + 1} / {numberLists.length}
+          </span>
         </div>
 
-        {/* Controls */}
-        <div className="flex items-center justify-between w-full gap-4">
-          
+        {/* Display Card */}
+        <div className="text-center space-y-4 py-10">
+          <h1 className="text-9xl font-bold text-red-600">
+            {currentData.nepali}
+          </h1>
+          <div className="space-y-1">
+            <p className="text-4xl font-semibold text-slate-900">
+              {currentData.word}
+            </p>
+            <p className="text-lg text-red-500 italic">
+              "{currentData.roman}"
+            </p>
+          </div>
+        </div>
+
+        {/* Navigation */}
+        <div className="flex gap-4 mt-12">
           <button
             onClick={handlePrev}
-            disabled={index === 0}
-            className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-red-500 text-white font-medium disabled:opacity-40"
+            disabled={currentIndex === 0}
+            className="flex-1 flex items-center justify-center gap-2 py-4 rounded-2xl border-2 border-red-600 text-red-600 font-bold hover:bg-red-50 disabled:opacity-30 disabled:hover:bg-transparent transition-all"
           >
-            <ArrowLeft size={18} />
+            <ChevronLeft size={24} />
             Prev
           </button>
-
+          
           <button
             onClick={handleNext}
-            disabled={index === numberLists.length - 1}
-            className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-red-500 text-white font-medium disabled:opacity-40"
+            disabled={currentIndex === numberLists.length - 1}
+            className="flex-1 flex items-center justify-center gap-2 py-4 rounded-2xl bg-red-600 text-white font-bold hover:bg-red-700 disabled:opacity-30 transition-all shadow-lg shadow-red-200"
           >
             Next
-            <ArrowRight size={18} />
+            <ChevronRight size={24} />
           </button>
         </div>
 
-        {/* Progress */}
-        <p className="text-sm text-gray-400">
-          {index + 1} / {numberLists.length}
-        </p>
-
+        {/* Reset Option */}
+        {currentIndex === numberLists.length - 1 && (
+          <button 
+            onClick={() => setCurrentIndex(0)}
+            className="w-full mt-6 text-sm text-red-400 hover:text-red-600 underline underline-offset-4"
+          >
+            Start over?
+          </button>
+        )}
       </div>
     </main>
   );
