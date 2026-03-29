@@ -16,7 +16,8 @@
 - Explore to see specific number
 
 # Design
-<img src="./design/d1.png'>
+
+<img src="./design/d1.png">
 
 [More Designs](./design)
 
