@@ -35,14 +35,14 @@ const Home = () => {
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.volume = 1; //0-1
     utterance.lang = "en-US"; // English
-    utterance.rate = 1.6; //0.1-10
+    utterance.rate = 0.9; //0.1-10
     utterance.pitch = 2;
     speechSynthesis.speak(utterance);
   };
 
   // Rendering JSX
   return (
-    <main className="min-h-screen bg-white flex flex-col items-center justify-center p-6 text-slate-800">
+    <main className="h-full bg-white flex flex-col items-center justify-center p-6 text-slate-800">
       <div className="max-w-md w-full border-none md:border-2 md:border-red-100 rounded-3xl p-3 md:shadow-sm">
         {/* Header / Progress */}
         <div className="flex justify-between items-center mb-12">

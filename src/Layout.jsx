@@ -4,7 +4,7 @@ import Header from "./components/Header";
 
 const Layout = () => {
   return (
-    <main className="w-full h-screen">
+    <main className="w-full max-h-screen">
       <Header></Header>
 
       {/* other main content here */}
