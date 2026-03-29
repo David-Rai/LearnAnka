@@ -32,6 +32,7 @@ const Home = () => {
   };
 
   const speak = (text) => {
+    speechSynthesis.cancel()
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.volume = 1; //0-1
     utterance.lang = "en-US"; // English
