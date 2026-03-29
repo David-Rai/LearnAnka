@@ -17,18 +17,21 @@ const App = () => {
 
   const currentData = numberLists[currentIndex];
 
+  //Next number
   const handleNext = () => {
     if (currentIndex < numberLists.length - 1) {
       setCurrentIndex((prev) => prev + 1);
     }
   };
 
+  //Previous number
   const handlePrev = () => {
     if (currentIndex > 0) {
       setCurrentIndex((prev) => prev - 1);
     }
   };
 
+  // Rendering JSX
   return (
     <main className="min-h-screen bg-white flex flex-col items-center justify-center p-6 text-slate-800">
       <div className="max-w-md w-full border-2 border-red-100 rounded-3xl p-3 shadow-sm">
