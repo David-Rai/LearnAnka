@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight, Hash } from 'lucide-react';
 import numberLists from './constant/numbers';
 
 const App = () => {
+
   // Initialize state from localStorage or default to 0
   const [currentIndex, setCurrentIndex] = useState(() => {
     const saved = localStorage.getItem('nepaliNumberIndex');
@@ -30,7 +31,7 @@ const App = () => {
 
   return (
     <main className="min-h-screen bg-white flex flex-col items-center justify-center p-6 text-slate-800">
-      <div className="max-w-md w-full border-2 border-red-100 rounded-3xl p-8 shadow-sm">
+      <div className="max-w-md w-full border-2 border-red-100 rounded-3xl p-3 shadow-sm">
         
         {/* Header / Progress */}
         <div className="flex justify-between items-center mb-12">
