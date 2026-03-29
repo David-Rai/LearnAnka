@@ -69,3 +69,6 @@ const numberLists = [
   { num: 99, nepali: "९९", word: "उनान्सय", roman: "u nan sa ya" },
   { num: 100, nepali: "१००", word: "एक सय", roman: "ek sa ya" },
 ];
+
+
+export default numberLists
