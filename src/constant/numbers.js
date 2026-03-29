@@ -1,4 +1,5 @@
-const numberLists=const nepaliNumbers = [
+
+const numberLists = [
   { num: 1, nepali: "१", word: "एक", roman: "ek" },
   { num: 2, nepali: "२", word: "दुई", roman: "dui" },
   { num: 3, nepali: "३", word: "तीन", roman: "tin" },
@@ -107,7 +108,7 @@ const numberLists=const nepaliNumbers = [
   { num: 97, nepali: "९७", word: "सन्तान्नब्बे", roman: "santanabbe" },
   { num: 98, nepali: "९८", word: "अन्ठान्नब्बे", roman: "anthaanabbe" },
   { num: 99, nepali: "९९", word: "उनान्सय", roman: "unansaya" },
-  { num: 100, nepali: "१००", word: "एक सय", roman: "ek saya" }
+  { num: 100, nepali: "१००", word: "एक सय", roman: "ek saya" },
 ];
 
-export default numberLists
+export default numberLists;
