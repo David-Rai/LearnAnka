@@ -15,6 +15,8 @@ const App = () => {
     localStorage.setItem('nepaliNumberIndex', currentIndex);
   }, [currentIndex]);
 
+
+  //Getting currentNumber Data
   const currentData = numberLists[currentIndex];
 
   //Next number
