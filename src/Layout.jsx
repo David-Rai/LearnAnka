@@ -4,7 +4,7 @@ import Header from "./components/Header";
 
 const Layout = () => {
   return (
-    <main className="w-full h-dvh overflow-hidden ">
+    <main className="w-full h-dvh">
       <Header />
 
       {/* other main content here */}
