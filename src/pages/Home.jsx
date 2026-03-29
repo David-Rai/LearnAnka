@@ -43,10 +43,10 @@ const Home = () => {
 
   // Rendering JSX
   return (
-    <main className="flex-1 bg-white flex flex-col items-center justify-center p-6 text-slate-800">
+    <main className="h-full bg-white flex flex-col items-center justify-center pt-4 text-slate-800">
       <div className="max-w-md w-full border-none md:border-2 md:border-red-100 rounded-3xl p-3 md:shadow-sm">
         {/* Header / Progress */}
-        <div className="flex justify-between items-center mb-12">
+        <div className="flex justify-between items-center mb-2">
           <div className="flex items-center gap-2 text-red-600">
             <Hash size={20} />
             <span className="font-bold">Number {currentData.num}</span>

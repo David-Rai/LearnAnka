@@ -4,11 +4,13 @@ import Header from "./components/Header";
 
 const Layout = () => {
   return (
-    <main className="w-full h-dvh">
-      <Header></Header>
+    <main className="w-full h-dvh overflow-hidden ">
+      <Header />
 
       {/* other main content here */}
-      <Outlet />
+      <div className="flex-1 ">
+        <Outlet />
+      </div>
     </main>
   );
 };
