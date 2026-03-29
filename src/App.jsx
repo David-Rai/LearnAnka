@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Hash,Volume2 } from "lucide-react";
+import { ChevronLeft, ChevronRight, Hash, Volume2 } from "lucide-react";
 import numberLists from "./constant/numbers";
 
 const App = () => {
@@ -35,15 +35,15 @@ const App = () => {
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.volume = 1; //0-1
     utterance.lang = "en-US"; // English
-    utterance.rate = 2; //0.1-10
-    utterance.pitch=2
+    utterance.rate = 1.6; //0.1-10
+    utterance.pitch = 2;
     speechSynthesis.speak(utterance);
   };
 
   // Rendering JSX
   return (
     <main className="min-h-screen bg-white flex flex-col items-center justify-center p-6 text-slate-800">
-      <div className="max-w-md w-full border-none md:border-2 border-red-100 rounded-3xl p-3 shadow-sm">
+      <div className="max-w-md w-full border-none md:border-2 md:border-red-100 rounded-3xl p-3 md:shadow-sm">
         {/* Header / Progress */}
         <div className="flex justify-between items-center mb-12">
           <div className="flex items-center gap-2 text-red-600">
@@ -68,13 +68,12 @@ const App = () => {
           </div>
         </div>
 
-{/* Pronunciation button */}
-<div className="w-full bg-red-100 flex items-center justify-center">
-  
-        <button onClick={() => speak(currentData.roman)}>
-          <Volume2 />
-        </button>
-</div>
+        {/* Pronunciation button */}
+        <div className="w-full flex items-center justify-center">
+          <button onClick={() => speak(currentData.roman)}>
+            <Volume2 size={30} className="text-slate-500"/>
+          </button>
+        </div>
 
         {/* Navigation */}
         <div className="flex gap-4 mt-12">
