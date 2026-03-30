@@ -36,7 +36,7 @@ const Home = () => {
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.volume = 1; //0-1
     utterance.lang = "en-US"; // English
-    utterance.rate = 0.9; //0.1-10
+    utterance.rate = 1.2  ; //0.1-10
     utterance.pitch = 2;
     speechSynthesis.speak(utterance);
   };
