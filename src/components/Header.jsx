@@ -50,8 +50,6 @@ const Header = () => {
         </div>
       </nav>
 
-      {/* Spacer to prevent content from being hidden behind the fixed mobile nav */}
-      <div className="h-16 md:hidden" />
     </>
   );
 };
