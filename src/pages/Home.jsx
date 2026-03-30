@@ -43,7 +43,8 @@ const Home = () => {
 
   // Rendering JSX
   return (
-    <main className="h-full flex flex-col items-center bg-red-300 justify-center md:pt-4 text-slate-800">
+    <main className="h-full flex flex-col items-center bg-white justify-center md:pt-4 text-slate-800">
+      
       <div className="max-w-md w-full border-none md:border-2 md:border-red-100 rounded-3xl p-3 md:shadow-sm">
         {/* Header / Progress */}
         <div className="flex justify-between items-center mb-2">
